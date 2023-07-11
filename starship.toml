@@ -1,0 +1,128 @@
+# ~/.config/starship.toml
+
+format = """\
+$directory\
+$git_branch\
+$git_status\
+$git_metrics\ 
+$git_state\ 
+$vcsh\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$container\
+$shell\
+$cmd_duration\
+
+$fill\
+
+$battery\
+$time
+$character\
+"""
+
+add_newline = true
+
+[character]
+success_symbol = '[ ➜](bold green) '
+error_symbol = '[ ✖](#E84D44) '
+
+[fill]
+symbol = " "
+
+[cmd_duration]
+min_time = 3_000
+format = " took [$duration]($style) "
+
+[battery]
+format = "[$percentage]($style) "
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "pink"
+format = '[ $time ]($style)'
+
+[directory]
+truncation_length = 5
+format = "[ $path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+
+[git_status]
+conflicted = "[=](bold red)"
+ahead = "[⇡](bold green) ×${count}"
+behind = "[⇣](bold red) ×${count} "
+diverged = "[⇕](bold purple) ×${ahead_count} ×${behind_count} "
+untracked = "[?](bold red) ×${count} "
+stashed = "[$](bold yellow) "
+modified = "[!](bold green) ×${count} "
+staged = "[+](bold yellow) ×${count} "
+renamed = "[»](bold light red) ×${count} "
+deleted = "[✘](bold red) ×${count} "
+style = "bright-white"
+format = "[$all_status$ahead_behind]($style) "
+
+[git_metrics]
+format = "([+$added]($added_style))[]($added_style) "
+disabled = false
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
