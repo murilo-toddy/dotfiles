@@ -95,7 +95,7 @@ style = "bold red"
 [time]
 disabled = false
 time_format = "%R"
-style = "pink"
+style = "bold #FFA500"
 format = '[ $time ]($style)'
 
 [directory]
