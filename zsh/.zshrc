@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 export AWS_PROFILE=cobli-tech
 export JAVA_HOME="/usr/lib/jvm/java-1.11.0-openjdk-amd64"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$JAVA_HOME/bin:$PATH
 
 eval "$(starship init zsh)"
