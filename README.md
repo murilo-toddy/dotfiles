@@ -1,3 +1,5 @@
+## ZSH
+
 ```bash
 sudo apt update -y
 sudo apt upgrade -y
@@ -18,7 +20,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
+```bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
 
 ```bash
 mkdir -p ~/.fonts
@@ -26,3 +30,12 @@ git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git ~/.fonts/ubuntu-m
 fc-cache -vf
 ```
 
+
+
+## TMUX
+
+Dependencies
+
+```bash
+brew install fzf
+```
