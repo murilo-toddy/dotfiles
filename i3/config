@@ -209,15 +209,16 @@ bindsym XF86AudioPrev exec playerctl previous
 exec spotify
 
 # Change keyboard response rate
-exec xset r rate 300 50
+exec_always xset r rate 300 50
 
 # Wallpaper
 exec_always feh --bg-scale /home/cobli/Pictures/uhUx4m.jpg
 
 # Two monitors configuration
-exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1920x676 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off
+exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x545 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off
 
 # Move focused workspace between monitors
 bindsym $mod+shift+greater move workspace to output right
 bindsym $mod+shift+less move workspace to output left
 
+exec_always compton
