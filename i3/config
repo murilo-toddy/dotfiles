@@ -114,10 +114,10 @@ set $ws1 "1: Shell"
 set $ws2 "2: Work"
 set $ws3 "3: GPB"
 set $ws4 "4: GPWs"
-set $ws5 "5"
+set $ws5 "5: Soc"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8 SM"
+set $ws8 "8"
 set $ws9 "9: Slack"
 set $ws10 "10: Spotify"
 
@@ -221,4 +221,9 @@ exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x545 --rotat
 bindsym $mod+shift+greater move workspace to output right
 bindsym $mod+shift+less move workspace to output left
 
+# Audio manager
+bindsym $mod+shift+v exec pavucontrol
+
+# Transparency
 exec_always compton
+
