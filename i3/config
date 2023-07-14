@@ -117,7 +117,7 @@ set $ws4 "4: GPWs"
 set $ws5 "5: Soc"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 "8: Calls"
 set $ws9 "9: Slack"
 set $ws10 "10: Spotify"
 
@@ -227,3 +227,8 @@ bindsym $mod+shift+v exec pavucontrol
 # Transparency
 exec_always compton
 
+# Printscreen
+#interactive screenshot by pressing printscreen
+bindsym Print exec gnome-screenshot -i 
+#crop-area screenshot by pressing Mod + printscreen
+bindsym $mod+Print exec gnome-screenshot -a -c
