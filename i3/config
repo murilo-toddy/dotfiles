@@ -217,8 +217,8 @@ exec_always feh --bg-scale /home/cobli/Pictures/uhUx4m.jpg
 # Two monitors configuration
 set $2mleft xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1920x463 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off
 set $2mright xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x545 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off
-set $no2m ""
-exec_always $2mleft
+set $no2m xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off
+exec_always $no2m
 
 # Move focused workspace between monitors
 bindsym $mod+shift+greater move workspace to output right
