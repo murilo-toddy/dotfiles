@@ -2,18 +2,31 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.4',
+    -- or                            , branch = '0.1.x',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    use ({
+        "loctvl842/monokai-pro.nvim",
+        as = "monokai-pro",
+        config = function()
+            vim.cmd('colorscheme monokai-pro-machine')
+        end
+    })
+
 	use('nvim-treesitter/playground')
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
+	use('tpope/vim-dispatch')
+	use('vim-test/vim-test')
     use('tiagovla/tokyodark.nvim')
+    use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
+
+
 -- 	use({
 -- 		"Mofiqul/dracula.nvim",
 -- 		as = 'dracula',
@@ -73,19 +86,43 @@ return require('packer').startup(function(use)
 --             vim.cmd('colorscheme dracula')
 -- 		end})
 
-    use('github/copilot.vim')
+--     use('github/copilot.vim')
 
-    use {
-        'mg979/vim-visual-multi', 
-		branch = 'master',
-    }
+--    use {
+--        'mg979/vim-visual-multi', 
+--		branch = 'master',
+--    }
 
-    use({
-        "rose-pine/neovim",
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end})
+--     use({
+--        "rose-pine/neovim",
+--        as = 'rose-pine',
+--        config = function()
+--            vim.cmd('colorscheme rose-pine')
+--        end})
+
+--    use ({ 
+--        "catppuccin/nvim",
+--        as = "catppuccin",
+--        config = function()
+--            vim.cmd('colorscheme catppuccin')
+--        end})
+
+--     use ({
+--         "morhetz/gruvbox",
+--         as = 'gruvbox'
+--     })
+
+--     use({
+--         'folke/tokyonight.nvim',
+--         lazy = false,        -- make sure we load this during startup if it is your main colorscheme
+--         priority = 1000,     -- make sure to load this before all the other start plugins
+--         config = function()
+--             -- Load the colorscheme here
+--             vim.cmd.colorscheme 'tokyonight-night'
+-- 
+--             -- You can configure highlights by doing something like
+--             vim.cmd.hi 'Comment gui=none'
+--         end})
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
