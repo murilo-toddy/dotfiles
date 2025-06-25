@@ -98,21 +98,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias bt="~/bluetooth.sh"
-alias vpn="~/vpn.sh"
-alias aws_login="~/aws_login.sh"
 
-alias aws-login="rm -rf ~/.aws/credentials && ~/work/setup/dev-setup/aws-login.sh && export AWS_PROFILE=cobli-tech"
-alias vpn="~/vpn.sh"
-export AWS_PROFILE=cobli-tech
 export JAVA_HOME="/usr/lib/jvm/java-1.11.0-openjdk-amd64"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$JAVA_HOME/bin:$PATH
 
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+alias v="nvim ."
 eval "$(starship init zsh)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

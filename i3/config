@@ -110,16 +110,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Shell"
-set $ws2 "2: Work"
-set $ws3 "3: Meet"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8: Personal"
-set $ws9 "9: Slack"
-set $ws10 "10: Spotify"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -127,6 +127,11 @@ bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
+bindsym $mod+Ctrl+q workspace number $ws6
+bindsym $mod+Ctrl+w workspace number $ws7
+bindsym $mod+Ctrl+e workspace number $ws8
+bindsym $mod+Ctrl+r workspace number $ws9
+bindsym $mod+Ctrl+t workspace number $ws10
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
@@ -146,8 +151,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="Gnome-terminal"] $ws1
-assign [class="Slack"] $ws9
-assign [class="Spotify"] $ws10
+assign [class="Spotify"] $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -186,8 +190,9 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        font pango:DejaVu Sans Mono, FontAwesome 8
+        position top
+        status_command i3status --config ~/dotfiles/i3/i3status.conf
+        font pango:FiraCode Nerd Font Mono 9
 }
 
 bindsym $mod+shift+x exec i3lock
@@ -229,6 +234,7 @@ exec_always compton
 
 # Printscreen
 #interactive screenshot by pressing printscreen
-bindsym Print exec gnome-screenshot -i 
+# bindsym Print exec gnome-screenshot -i 
 #crop-area screenshot by pressing Mod + printscreen
-bindsym $mod+Print exec gnome-screenshot -a -c
+# bindsym $mod+Print exec gnome-screenshot -a -c
+bindsym Print exec /usr/bin/flameshot gui

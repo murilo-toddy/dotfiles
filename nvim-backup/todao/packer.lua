@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
+    use('nvim-lua/plenary.nvim')
+    use('ej-shafran/compile-mode.nvim')
     use('tiagovla/tokyodark.nvim')
 -- 	use({
 -- 		"Mofiqul/dracula.nvim",
